@@ -1,6 +1,7 @@
 package com.tenniscourts.schedules;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.tenniscourts.schedules.api.CreateScheduleRequestDTOApi;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class CreateScheduleRequestDTO {
+public class CreateScheduleRequestDTO implements CreateScheduleRequestDTOApi {
 
     @NotNull
     private Long tennisCourtId;

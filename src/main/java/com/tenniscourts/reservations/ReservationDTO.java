@@ -1,5 +1,6 @@
 package com.tenniscourts.reservations;
 
+import com.tenniscourts.reservations.api.ReservationDTOApi;
 import com.tenniscourts.schedules.ScheduleDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,7 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 @Data
-public class ReservationDTO {
+public class ReservationDTO implements ReservationDTOApi {
 
     private Long id;
 

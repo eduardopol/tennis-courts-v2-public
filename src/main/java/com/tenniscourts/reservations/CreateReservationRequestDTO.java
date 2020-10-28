@@ -1,5 +1,6 @@
 package com.tenniscourts.reservations;
 
+import com.tenniscourts.reservations.api.CreateReservationRequestDTOApi;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,11 +12,11 @@ import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @Builder
 @Data
-public class CreateReservationRequestDTO {
+public class CreateReservationRequestDTO implements CreateReservationRequestDTOApi {
 
     @NotNull
     private Long guestId;

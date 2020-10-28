@@ -1,6 +1,7 @@
 package com.tenniscourts.tenniscourts;
 
 import com.tenniscourts.schedules.ScheduleDTO;
+import com.tenniscourts.tenniscourts.api.TennisCourtDTOApi;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TennisCourtDTO {
+public class TennisCourtDTO implements TennisCourtDTOApi {
 
     private Long id;
 
