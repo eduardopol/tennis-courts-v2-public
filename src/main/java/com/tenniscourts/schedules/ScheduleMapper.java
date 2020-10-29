@@ -7,6 +7,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ScheduleMapper {
 
+    Schedule map(CreateScheduleRequestDTO source);
+
     Schedule map(ScheduleDTO source);
 
     ScheduleDTO map(Schedule source);

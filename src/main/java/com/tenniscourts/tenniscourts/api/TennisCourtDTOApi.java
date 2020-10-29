@@ -1,11 +1,9 @@
 package com.tenniscourts.tenniscourts.api;
 
-import com.tenniscourts.reservations.ReservationDTO;
 import com.tenniscourts.schedules.ScheduleDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @ApiModel(value = "TennisCourtDTO", description = "Tennis Court details")

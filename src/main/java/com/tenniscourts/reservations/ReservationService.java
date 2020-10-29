@@ -97,7 +97,7 @@ public class ReservationService {
         } else if ( hours < 12 && hours >= 2) {
             return reservation.getValue().multiply(BigDecimal.valueOf(0.5));
         } else if ( hours < 2 && minutes >= 1) {
-            return reservation.getValue().multiply(BigDecimal.valueOf(0.5));
+            return reservation.getValue().multiply(BigDecimal.valueOf(0.25));
         }
 
         return BigDecimal.ZERO;

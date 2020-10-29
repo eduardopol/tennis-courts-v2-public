@@ -1,7 +1,6 @@
 package com.tenniscourts.schedules;
 
 import com.tenniscourts.config.BaseRestController;
-import com.tenniscourts.reservations.ReservationController;
 import com.tenniscourts.schedules.api.ScheduleControllerApi;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,7 +27,7 @@ public class ScheduleController extends BaseRestController implements ScheduleCo
     @PostMapping
     public ResponseEntity<Void> addScheduleTennisCourt(
             @Valid @RequestBody CreateScheduleRequestDTO createScheduleRequestDTO) {
-        return ResponseEntity.created(locationByEntity(scheduleService.addSchedule(createScheduleRequestDTO.getTennisCourtId(), createScheduleRequestDTO).getId())).build();
+        return ResponseEntity.created(locationByEntity(scheduleService.addSchedule(createScheduleRequestDTO).getId())).build();
     }
 
     @Override

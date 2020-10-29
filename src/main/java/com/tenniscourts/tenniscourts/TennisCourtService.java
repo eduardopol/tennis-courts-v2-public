@@ -10,21 +10,27 @@ import org.springframework.stereotype.Service;
 public class TennisCourtService {
 
     private final TennisCourtRepository tennisCourtRepository;
-    private final ScheduleService scheduleService;
     private final TennisCourtMapper tennisCourtMapper;
+    private final ScheduleService scheduleService;
 
     public TennisCourtDTO addTennisCourt(TennisCourtDTO tennisCourt) {
         return tennisCourtMapper.map(tennisCourtRepository.saveAndFlush(tennisCourtMapper.map(tennisCourt)));
     }
 
-    public TennisCourtDTO findTennisCourtById(Long id) {
+    public TennisCourt findTennisCourtById(Long id) {
+        return tennisCourtRepository.findById(id).orElseThrow(() ->
+                new EntityNotFoundException("Tennis Court not found.")
+        );
+    }
+
+    public TennisCourtDTO findTennisCourtDTOById(Long id) {
         return tennisCourtRepository.findById(id).map(tennisCourtMapper::map).orElseThrow(() ->
             new EntityNotFoundException("Tennis Court not found.")
         );
     }
 
     public TennisCourtDTO findTennisCourtWithSchedulesById(Long tennisCourtId) {
-        TennisCourtDTO tennisCourtDTO = findTennisCourtById(tennisCourtId);
+        TennisCourtDTO tennisCourtDTO = findTennisCourtDTOById(tennisCourtId);
         tennisCourtDTO.setTennisCourtSchedules(scheduleService.findSchedulesByTennisCourtId(tennisCourtId));
         return tennisCourtDTO;
     }

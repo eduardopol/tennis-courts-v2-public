@@ -1,7 +1,6 @@
 package com.tenniscourts.tenniscourts;
 
 import com.tenniscourts.config.BaseRestController;
-import com.tenniscourts.reservations.ReservationController;
 import com.tenniscourts.tenniscourts.api.TennisCourtControllerApi;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,7 @@ public class TennisCourtController extends BaseRestController implements TennisC
     @Override
     @GetMapping("/{tennisCourtId}")
     public ResponseEntity<TennisCourtDTO> findTennisCourtById(@PathVariable @NotNull Long tennisCourtId) {
-        return ResponseEntity.ok(tennisCourtService.findTennisCourtById(tennisCourtId));
+        return ResponseEntity.ok(tennisCourtService.findTennisCourtDTOById(tennisCourtId));
     }
 
     @Override
